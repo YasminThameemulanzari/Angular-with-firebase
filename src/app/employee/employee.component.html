@@ -1,0 +1,33 @@
+<div class="display-5">Employee Register</div>
+
+<form #form="ngForm" autocomplete="false" (submit) = "onSubmit(form)">
+  <div class="form-group">
+    <input name="empname" #empname="ngModel" [(ngModel)]="service.formData.empname" class="form-control" required
+      placeholder=Emp Name">
+      <div  *ngIf="empname.invalid && empname.touched" class="validation-error">This field is required</div>
+  </div>
+
+  <div class="form-group">
+    <input name="empphone" #empphone="ngModel" [(ngModel)]="service.formData.empphone" class="form-control"
+      placeholder="Phone">
+  </div>
+
+  <div class="form-group">
+    <input name="empdept" #empdept="ngModel" [(ngModel)]="service.formData.empdept" class="form-control"
+      placeholder="Department">
+  </div>
+
+  <div class="form-group">
+    <input name="empemail" #empemail="ngModel" [(ngModel)]="service.formData.empemail" class="form-control"
+      placeholder="Email" required>
+      <div *ngIf="empemail.invalid && empemail.touched" class="validation-error">This field is required</div>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" [disabled] = "form.invalid"  class="btn-primary btn-block"> Submit</button>
+  </div>
+
+
+</form>
+
+

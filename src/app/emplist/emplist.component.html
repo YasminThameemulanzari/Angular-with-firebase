@@ -1,0 +1,21 @@
+<table class="table table-hover">
+<thead>
+    <th>Emp Name</th>
+    <th>Emp Phone</th>
+    <th>Emp Email</th>
+    <th>Emp Dept</th>
+</thead>
+
+<tbody >
+    <tr *ngFor="let emp of employeesList">
+      <td (click) = "onEdit(emp)">{{emp.empname}}</td>
+      <td (click) = "onEdit(emp)">{{emp.empphone}}</td>
+      <td (click) = "onEdit(emp)">{{emp.empemail}}</td>
+      <td (click) = "onEdit(emp)">{{emp.empdept}}</td>
+      <td>
+        <button (click)="delete(emp.id)">Delete</button>
+      </td>
+    </tr>
+</tbody>
+
+</table>
